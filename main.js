@@ -28,7 +28,7 @@ helpers.counter = function(sentence){
   var words = sentence.split("%20");
   counts.spaces = words.length - 1;
   counts.words = words.length;
-  counts.characters = sentence.length - (counts.spaces * 3);
+  counts.letters = sentence.split(/[^a-z]+/i).join("").length;
   return counts;
 };
 
